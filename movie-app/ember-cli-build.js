@@ -1,10 +1,14 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const config = require('./config/environment');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
-    // Add options here
+    sourcemaps: {
+      enabled: config.environment === 'development',
+      extensions: ['js'],
+    },
   });
 
   app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');
