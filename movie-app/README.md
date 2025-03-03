@@ -55,26 +55,42 @@ Specify what it takes to deploy your app.
   - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
-
 ## Project setup
+
 `npx -p ember-cli ember new movie-app --embroider`
 
 ## Configure ember-cli.build.js to remove deprecation warnings
+
 - Setting 'staticComponents' is deprecated. Use 'staticInvokables' instead
 - Setting 'staticHelpers' is deprecated. Use 'staticInvokables' instead
 - Setting 'staticModifiers' is deprecated. Use 'staticInvokables' instead
 
 `staticInvokables: true,`
 
-## Install bootstrap and import to project 
-`npm i boostrap`
-- Import boostrap inside ember-cli.build.js
-`app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');`
-`app.import('node_modules/bootstrap/dist/js/bootstrap.min.js');`
+## Install bootstrap and import to project
 
-## Add sourcemap for debugging purposes on dev 
+`npm i boostrap`
+
+- Import boostrap inside ember-cli.build.js
+  `app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');`
+  `app.import('node_modules/bootstrap/dist/js/bootstrap.min.js');`
+
+## Add sourcemap for debugging purposes on dev
+
 - ember-cli.build.js
-`sourcemaps: {
-      enabled: config.environment === 'development',
-      extensions: ['js'],
-    },`
+  `sourcemaps: {
+  enabled: config.environment === 'development',
+  extensions: ['js'],
+},`
+
+## Add this configuration to remove this ember data related warning on console
+
+![alt text](image-1.png)
+
+- ember-cli.build.js
+  `const { setConfig } = await import('@warp-drive/build-config');`
+  `setConfig(app, __dirname, {
+  deprecations: {
+    DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
+  },
+});`

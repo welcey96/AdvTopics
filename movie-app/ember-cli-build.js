@@ -3,11 +3,18 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const config = require('./config/environment');
 
-module.exports = function (defaults) {
+module.exports = async function (defaults) {
   const app = new EmberApp(defaults, {
     sourcemaps: {
       enabled: config.environment === 'development',
       extensions: ['js'],
+    },
+  });
+
+  const { setConfig } = await import('@warp-drive/build-config');
+  setConfig(app, __dirname, {
+    deprecations: {
+      DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
     },
   });
 
