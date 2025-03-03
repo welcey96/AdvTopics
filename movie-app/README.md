@@ -58,9 +58,16 @@ Specify what it takes to deploy your app.
 
 ## Project setup
 `npx -p ember-cli ember new movie-app --embroider`
+
 ## Configure ember-cli.build.js to remove deprecation warnings these warnings
 - Setting 'staticComponents' is deprecated. Use 'staticInvokables' instead
 - Setting 'staticHelpers' is deprecated. Use 'staticInvokables' instead
-- Setting 'staticModifiers' is deprecated. Use 'staticInvokables' instead`
+- Setting 'staticModifiers' is deprecated. Use 'staticInvokables' instead
 
 `staticInvokables: true,`
+
+## Install bootstrap and import to project 
+`npm i boostrap`
+- Import boostrap inside ember-cli.build.js
+`app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');`
+`app.import('node_modules/bootstrap/dist/js/bootstrap.min.js');`

@@ -7,6 +7,9 @@ module.exports = function (defaults) {
     // Add options here
   });
 
+  app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');
+  app.import('node_modules/bootstrap/dist/js/bootstrap.min.js');
+
   const { Webpack } = require('@embroider/webpack');
   return require('@embroider/compat').compatBuild(app, Webpack, {
     staticAddonTestSupportTrees: true,
