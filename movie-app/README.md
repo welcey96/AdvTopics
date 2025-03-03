@@ -94,3 +94,12 @@ Specify what it takes to deploy your app.
     DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
   },
 });`
+
+
+## Remove this @service store related warning on console
+![alt text](image.png)
+ - this warning is because we imported a service called store, previous versions of ember automatically knows what store is upon importing it, on future versions, it will be deprecated
+    - create a service called store using this command
+    `npx ember g service store`
+    - put this code inside the generated store.js inside services directory
+    `export { default } from 'ember-data/store';`
