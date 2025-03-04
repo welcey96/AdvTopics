@@ -74,6 +74,12 @@ Specify what it takes to deploy your app.
 - Import boostrap inside ember-cli.build.js
   `app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');`
   `app.import('node_modules/bootstrap/dist/js/bootstrap.min.js');`
+  
+   - specify what file to import on different environment
+    `app.import({
+      development: 'node_modules/bootstrap/dist/css/bootstrap.css',
+      production: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    });`
 
 ## Add sourcemap for debugging purposes on dev
 

@@ -18,8 +18,14 @@ module.exports = async function (defaults) {
     },
   });
 
-  app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');
-  app.import('node_modules/bootstrap/dist/js/bootstrap.min.js');
+  app.import({
+    development: 'node_modules/bootstrap/dist/css/bootstrap.css',
+    production: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
+  });
+  app.import({
+    development: 'node_modules/bootstrap/dist/js/bootstrap.js',
+    production: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+  });
 
   const { Webpack } = require('@embroider/webpack');
   return require('@embroider/compat').compatBuild(app, Webpack, {
