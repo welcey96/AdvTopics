@@ -1,8 +1,17 @@
-{{page-title "MovieApp"}}
 <header>
-    <nav>NAV</nav>
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <div class="container-fluid">
+            <LinkTo class="navbar-brand text-danger fw-bolder" @route="index">Movie App</LinkTo>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item ms-4">
+                        <LinkTo class="text-white" @route="movies.index">Movies</LinkTo>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 <main>
     {{outlet}}
 </main>
-<footer>FOOTER</footer>
