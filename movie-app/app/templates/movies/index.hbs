@@ -1,3 +1,21 @@
-{{page-title "Index"}}
-<p>Movies works!</p>
-{{outlet}}
+{{page-title "Movies"}}
+<section class="bg-black">
+    <div class="container py-4">
+        <h2 class="text-white">Movie List</h2>
+        <div class="row">
+            {{#each @model as |movie|}}
+            <div class="card rounded col-sm-4 gx-0 gy-4 mx-2 max-w--200">
+                <LinkTo @route="movies.details" @model={{movie.id}} class="text-decoration-none">
+                    <img class="card-img-top" src="{{movie.image}}" alt="{{movie.title}}">
+                    <div class="card-body text-center">
+                        <p class="card-text text-black text-center"> {{movie.title}}</p>
+                        <p class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.year}}</p>
+                    </div>
+                </LinkTo>
+            </div>
+            {{else}}
+            <div class="text-white">No Records</div>
+            {{/each}}
+        </div>
+    </div>
+</section>
