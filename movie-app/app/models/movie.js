@@ -16,7 +16,7 @@ export default class MovieModel extends Model {
     return `${config.TMDB_IMG}${this.backdrop_path}`;
   }
 
-  get year(){
+  get year() {
     return new Date(this.release_date).getFullYear();
   }
 }
