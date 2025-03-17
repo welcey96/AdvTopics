@@ -6,10 +6,10 @@
             {{#each @model as |movie|}}
             <div class="card rounded col-sm-4 gx-0 gy-4 mx-2 max-w--200">
                 <LinkTo @route="movies.details" @model={{movie.id}} class="text-decoration-none">
-                    <img class="card-img-top" src="{{movie.image}}" alt="{{movie.title}}">
+                    <img class="card-img-top img--300" src="{{movie.image}}" alt="{{movie.title}}">
                     <div class="card-body text-center">
                         <p class="card-text text-black text-center"> {{movie.title}}</p>
-                        <p class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.year}}</p>
+                        <span class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.year}}</span>
                     </div>
                 </LinkTo>
             </div>
