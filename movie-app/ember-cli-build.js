@@ -18,13 +18,19 @@ module.exports = async function (defaults) {
     },
   });
 
-  app.import({
-    development: 'node_modules/bootstrap/dist/css/bootstrap.css',
-    production: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
-  });
-  app.import({
-    development: 'node_modules/bootstrap/dist/js/bootstrap.js',
-    production: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+  const assets = [
+    {
+      development: 'node_modules/bootstrap/dist/css/bootstrap.css',
+      production: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    },
+    {
+      development: 'node_modules/bootstrap/dist/js/bootstrap.js',
+      production: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    },
+  ];
+
+  assets.forEach((asset) => {
+    app.import(asset[EmberApp.env()]);
   });
 
   const { Webpack } = require('@embroider/webpack');
