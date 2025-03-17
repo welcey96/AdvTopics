@@ -6,6 +6,10 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'history',
+    TMDB_HOST: 'https://api.themoviedb.org',
+    TMDB_API_VERSION: '/3',
+    TMDB_IMG: 'https://image.tmdb.org/t/p/w500',
+    TMDB_API_KEY: '14c1a6c0988a632608a158fe3e93ca28',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
