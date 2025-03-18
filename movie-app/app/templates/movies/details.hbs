@@ -1,3 +1,24 @@
 {{page-title "Details"}}
-<p>Movie details work!</p>
-{{outlet}}
+{{#let @model as |movie|}}
+{{#if movie}}
+<section>
+    <div class="background" style={{this.backdrop}}>
+        <div class="overlay">
+            <div class="container d-flex h-100 align-items-center gap-4">
+                <div class="card w--60">
+                    <img class="card-img-top rounded" src="{{movie.poster_path}}" alt="{{movie.title}}">
+                </div>
+                <div class="text-white">
+                    <h2> {{movie.title}}</h2>
+                    <p class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.release_date}}</p>
+                    <h4 class="mt-4">Overview</h4>
+                    <p> {{movie.overview}}</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{{/if}}
+{{/let}}
