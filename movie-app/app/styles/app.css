@@ -1,1 +1,49 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+.max-w--200 {
+  max-width: 200px;
+}
+
+.w--60 {
+  width: 60%;
+  max-width: 350px;
+}
+
+.img--300 {
+  height: 300px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.background {
+  border-bottom: 1px solid rgb(31.5 31.5 31.5 / 100%);
+  background-position: left calc((50vw - 170px) - 340px) top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.overlay {
+  height: inherit;
+  background-image: linear-gradient(
+    to right,
+    rgb(31.5 31.5 31.5 / 100%) calc((50vw - 170px) - 340px),
+    rgb(31.5 31.5 31.5 / 84%) 50%,
+    rgb(31.5 31.5 31.5 / 84%) 100%
+  );
+}
