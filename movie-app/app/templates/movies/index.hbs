@@ -4,15 +4,22 @@
         <h2 class="text-white">Movie List</h2>
         <div class="row">
             {{#each @model as |movie|}}
-            <div class="card rounded col-sm-4 gx-0 gy-4 mx-2 max-w--200">
-                <LinkTo @route="movies.details" @model={{movie.id}} class="text-decoration-none">
+            <LinkTo @route="movies.details" @model={{movie.id}}
+                class="text-decoration-none col-sm-4 gx-0 gy-4 mx-2 max-w--200">
+                {{!-- <div class="card rounded ">
                     <img class="card-img-top img--300" src="{{movie.image}}" alt="{{movie.title}}">
                     <div class="card-body text-center">
                         <p class="card-text text-black text-center"> {{movie.title}}</p>
                         <span class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.year}}</span>
                     </div>
-                </LinkTo>
-            </div>
+                </div> --}}
+                <MovieImage @image="{{movie.image}}" @title="{{movie.title}}" @imageClass="img--300" class="card rounded">
+                    <div class="card-body text-center">
+                        <p class="card-text text-black text-center"> {{movie.title}}</p>
+                        <span class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.year}}</span>
+                    </div>
+                </MovieImage>
+            </LinkTo>
             {{else}}
             <div class="text-white">No Records</div>
             {{/each}}

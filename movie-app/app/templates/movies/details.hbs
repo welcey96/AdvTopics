@@ -5,9 +5,11 @@
     <div class="background" style={{this.backdrop}}>
         <div class="overlay">
             <div class="container d-flex h-100 align-items-center gap-4">
-                <div class="card w--60">
+                {{!-- <div class="card rounded w--60">
                     <img class="card-img-top rounded" src="{{movie.poster_path}}" alt="{{movie.title}}">
-                </div>
+                </div> --}}
+                <MovieImage @image="{{movie.poster_path}}" @title="{{movie.title}}" class="card rounded w--60">
+                </MovieImage>
                 <div class="text-white">
                     <h2> {{movie.title}}</h2>
                     <p class="badge rounded-pill bg-warning text-dark text-xs"> {{movie.release_date}}</p>
